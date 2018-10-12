@@ -29,6 +29,9 @@ public class ChatBot
 		String name = "";
 		return name;
 	}
+	public String toString() {
+		return "";
+	}
 
 	public ArrayList<String> getResponseList()
 	{
