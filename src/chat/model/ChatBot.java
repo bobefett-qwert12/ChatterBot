@@ -28,7 +28,7 @@ public class ChatBot
 		this.content = content;
 		this.spookyList = spookyList;
 	}
-	
+
 	private void buildTheWall()
 	{
 		responseList.add("Top of the morning to you, Laddies!");
@@ -37,7 +37,20 @@ public class ChatBot
 		responseList.add("Yes!");
 		responseList.add("No!");
 		responseList.add("Bush did 9/11.");
-		
+
+		spookyList.add("Halloween is the best holliday.");
+		spookyList.add("BOO!!! Hahahaha, gotcha!");
+		spookyList.add("Spooky scary skeletons...");
+		spookyList.add("UwU");
+		spookyList.add("Here's JOHNNY!");
+		spookyList.add("Bush did 9/11.");
+	}
+
+	public String processText(String userText)
+	{
+		String output = "";
+		output += "You said: " + userText;
+		return output;
 	}
 
 	public String askName()
@@ -45,7 +58,9 @@ public class ChatBot
 		String name = "";
 		return name;
 	}
-	public String toString() {
+
+	public String toString()
+	{
 		return "";
 	}
 

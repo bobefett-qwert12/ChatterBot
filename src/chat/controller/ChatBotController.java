@@ -16,19 +16,19 @@ public class ChatBotController
 		boolean isDone = false;
 		while (!isDone)
 		{
-			JOptionPane.showMessageDialog(null, "Would you like to play a game?");
-			String quitting = JOptionPane.showInputDialog(null, "Type \"quit\" to exit:");
-			if (quitting.equalsIgnoreCase("quit"))
+			String userInput = "";
+			while(!userInput.equals("quit"))
 			{
-				isDone = true;
+				userInput = interactWithChatbot(userInput);
 			}
 		}
 	}
 
-	public String interactWithChatbot(String botText)
+	public String interactWithChatbot(String userInput)
 	{
-		String something = "";
-		return something;
+		String chatBotSays = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
+		chatBotSays = myBot.processText(userInput);
+		return chatBotSays;
 	}
 
 	public ChatBot getMyBot()
