@@ -12,7 +12,12 @@ public class ChatBot
 
 	public ChatBot()
 	{
-
+		this.joke = "*insert dad joke*";
+		this.currentUser = "default asshole";
+		this.content = new String("quality content");
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		buildTheWall();
 	}
 
 	public ChatBot(ArrayList<String> responseList, String currentUser, String joke, String content, ArrayList<String> spookyList)
@@ -22,6 +27,17 @@ public class ChatBot
 		this.joke = joke;
 		this.content = content;
 		this.spookyList = spookyList;
+	}
+	
+	private void buildTheWall()
+	{
+		responseList.add("Top of the morning to you, Laddies!");
+		responseList.add("Shut up, I'm going to leave now!");
+		responseList.add("This ain't it, Chief.");
+		responseList.add("Yes!");
+		responseList.add("No!");
+		responseList.add("Bush did 9/11.");
+		
 	}
 
 	public String askName()

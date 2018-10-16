@@ -7,6 +7,10 @@ public class ChatBotController
 {
 	private ChatBot myBot;
 
+	public ChatBotController()
+	{
+		myBot = new ChatBot();
+	}
 	public void start()
 	{
 		boolean isDone = false;
