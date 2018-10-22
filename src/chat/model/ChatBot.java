@@ -78,6 +78,18 @@ public class Chatbot
 		return checkedContent;
 	}
 
+	public boolean legitimacyChecker(String input)
+	{
+		if (input.length() > 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	public String askName()
 	{
 		String name = "";
