@@ -1,15 +1,15 @@
 package chat.controller;
 
-import chat.model.ChatBot;
+import chat.model.Chatbot;
 import javax.swing.JOptionPane;
 
-public class ChatBotController
+public class ChatController
 {
-	private ChatBot myBot;
+	private Chatbot myBot;
 
-	public ChatBotController()
+	public ChatController()
 	{
-		myBot = new ChatBot();
+		myBot = new Chatbot();
 	}
 	public void start()
 	{
@@ -31,12 +31,12 @@ public class ChatBotController
 		return chatBotSays;
 	}
 
-	public ChatBot getMyBot()
+	public Chatbot getMyBot()
 	{
 		return this.myBot;
 	}
 
-	public void setMyBot(ChatBot myBot)
+	public void setMyBot(Chatbot myBot)
 	{
 		this.myBot = myBot;
 	}

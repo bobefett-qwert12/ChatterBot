@@ -2,7 +2,7 @@ package chat.model;
 
 import java.util.ArrayList;
 
-public class ChatBot
+public class Chatbot
 {
 	private ArrayList<String> responseList;
 	private String currentUser;
@@ -10,7 +10,7 @@ public class ChatBot
 	private String content;
 	private ArrayList<String> spookyList;
 
-	public ChatBot()
+	public Chatbot()
 	{
 		this.joke = "*insert dad joke*";
 		this.currentUser = "default asshole";
@@ -20,7 +20,7 @@ public class ChatBot
 		buildTheWall();
 	}
 
-	public ChatBot(ArrayList<String> responseList, String currentUser, String joke, String content, ArrayList<String> spookyList)
+	public Chatbot(ArrayList<String> responseList, String currentUser, String joke, String content, ArrayList<String> spookyList)
 	{
 		this.responseList = responseList;
 		this.currentUser = currentUser;
