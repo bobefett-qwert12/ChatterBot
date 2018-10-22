@@ -20,6 +20,11 @@ public class Chatbot
 		buildTheWall();
 	}
 
+	public Chatbot(String content)
+	{
+		this.content = content;
+	}
+
 	public Chatbot(ArrayList<String> responseList, String currentUser, String joke, String content, ArrayList<String> spookyList)
 	{
 		this.responseList = responseList;
@@ -31,12 +36,22 @@ public class Chatbot
 
 	private void buildTheWall()
 	{
-		responseList.add("Top of the morning to you, Laddies!");
+		responseList.add("Top of the morning to you, Laddies! (\"Hello\" in Irish)");
 		responseList.add("Shut up, I'm going to leave now!");
 		responseList.add("This ain't it, Chief.");
 		responseList.add("Yes!");
 		responseList.add("No!");
 		responseList.add("Bush did 9/11.");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
+		responseList.add("");
 
 		spookyList.add("Halloween is the best holliday.");
 		spookyList.add("BOO!!! Hahahaha, gotcha!");
@@ -44,13 +59,23 @@ public class Chatbot
 		spookyList.add("UwU");
 		spookyList.add("Here's JOHNNY!");
 		spookyList.add("Bush did 9/11.");
+		spookyList.add("3 spoopy 5 me");
+		spookyList.add("11/10, would spoop again");
+		spookyList.add("");
 	}
 
 	public String processText(String userText)
 	{
 		String output = "";
 		output += "You said: " + userText;
+		output += "Chatbot says: ";
 		return output;
+	}
+
+	public String contentChecker(String inputContent)
+	{
+		String checkedContent = "";
+		return checkedContent;
 	}
 
 	public String askName()
