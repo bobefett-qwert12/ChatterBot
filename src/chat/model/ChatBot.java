@@ -61,33 +61,74 @@ public class Chatbot
 		spookyList.add("Bush did 9/11.");
 		spookyList.add("3 spoopy 5 me");
 		spookyList.add("11/10, would spoop again");
-		spookyList.add("");
+		spookyList.add("You're Mom gay");
 	}
 
 	public String processText(String userText)
 	{
 		String output = "";
+		if (contentChecker(userText))
+		{
+			output += "You said the special words! ";
+		}
 		output += "You said: " + userText;
-		output += "Chatbot says: ";
+		output += " Chatbot says: ";
 		return output;
 	}
 
-	public String contentChecker(String inputContent)
+	public boolean contentChecker(String inputContent)
 	{
-		String checkedContent = "";
-		return checkedContent;
+		boolean hasContent = false;
+		if (legitimacyChecker(inputContent) && inputContent.contains(content))
+		{
+			if (inputContent.equals(content))
+			{
+				hasContent = true;
+			}
+			else if (inputContent.contains(" " + content + " "))
+			{
+				hasContent = true;
+			}
+			else
+			{
+				hasContent = false;
+			}
+		}
+		return hasContent;
+	}
+
+	public boolean spookyChecker(String inputContent)
+	{
+		boolean isSpooky = false;
+		if (inputContent.contains("Halloween"))
+		{
+			isSpooky = true;
+		}
+		for (String phrase : spookyList)
+		{
+			if(inputContent.contains(phrase)) {
+				isSpooky = true;
+			}
+		}
+		return isSpooky;
 	}
 
 	public boolean legitimacyChecker(String input)
 	{
-		if (input.length() > 0)
+		boolean isLegit = true;
+		if (input == null)
 		{
-			return true;
+			isLegit = false;
 		}
-		else
+		else if (input.length() < 2)
 		{
-			return false;
+			isLegit = false;
 		}
+		else if (input.contains("sdf") || input.contains("cvb") || input.contains("jkl") || input.contains("rty"))
+		{
+			isLegit = false;
+		}
+		return isLegit;
 	}
 
 	public String askName()
