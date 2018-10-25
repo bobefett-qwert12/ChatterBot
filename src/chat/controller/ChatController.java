@@ -22,6 +22,7 @@ public class ChatController
 			{
 				userInput = interactWithChatbot(userInput);
 			}
+			isDone = true;
 		}
 	}
 
