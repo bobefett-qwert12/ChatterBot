@@ -23,15 +23,9 @@ public class Chatbot
 	public Chatbot(String content)
 	{
 		this.content = content;
-	}
-
-	public Chatbot(ArrayList<String> responseList, String currentUser, String joke, String content, ArrayList<String> spookyList)
-	{
-		this.responseList = responseList;
-		this.currentUser = currentUser;
-		this.joke = joke;
-		this.content = content;
-		this.spookyList = spookyList;
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		buildTheWall();
 	}
 
 	private void buildTheWall()
