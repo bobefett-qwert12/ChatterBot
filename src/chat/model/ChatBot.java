@@ -66,7 +66,7 @@ public class Chatbot
 			output += "You said the special words! ";
 		}
 		output += "You said: " + userText;
-		output += " Chatbot says: ";
+		output += "\n Chatbot says: ";
 		return output;
 	}
 
