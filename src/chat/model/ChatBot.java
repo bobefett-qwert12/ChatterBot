@@ -79,7 +79,15 @@ public class Chatbot
 			{
 				hasContent = true;
 			}
-			else if (inputContent.contains(" " + content + " "))
+			else if (inputContent.indexOf(content + " ") == 0)
+			{
+				hasContent = true;
+			}
+			else if(inputContent.indexOf(" " + content) == inputContent.length() - 1)
+			{
+				hasContent = true;
+			}
+			else if(inputContent.contains(" " + content + " "))
 			{
 				hasContent = true;
 			}
