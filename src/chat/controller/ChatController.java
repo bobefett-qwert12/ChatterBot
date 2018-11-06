@@ -17,10 +17,11 @@ public class ChatController
 		boolean isDone = false;
 		while (!isDone)
 		{
-			String userInput = "";
-			while (!userInput.equals("quit"))
+			String userInput = JOptionPane.showInputDialog(null, "Welcome to my world! My name is chatBot! What do you want to talk about?");
+			String userInput2 = userInput;
+			while (!userInput2.equals("quit"))
 			{
-				userInput = interactWithChatbot(userInput);
+				userInput2 = JOptionPane.showInputDialog(null, interactWithChatbot(userInput2));
 			}
 			isDone = true;
 		}
@@ -28,9 +29,8 @@ public class ChatController
 
 	public String interactWithChatbot(String userInput)
 	{
-		String chatBotSays = JOptionPane.showInputDialog(null, "Hi, what do you want to talk about?");
-		chatBotSays = myBot.processText(userInput);
-		if (chatBotSays.toLowerCase().contains("quit"))
+		String chatBotSays = myBot.processText(userInput);
+		if (userInput.toLowerCase().contains("quit"))
 		{
 			return "quit";
 		}

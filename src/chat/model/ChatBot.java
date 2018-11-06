@@ -1,6 +1,8 @@
 package chat.model;
 
 import java.util.ArrayList;
+import java.util.Random;
+import javax.swing.JOptionPane;
 
 public class Chatbot
 {
@@ -9,11 +11,12 @@ public class Chatbot
 	private String joke;
 	private String content;
 	private ArrayList<String> spookyList;
+	private Random rand = new Random();
 
 	public Chatbot()
 	{
-		this.joke = "*insert dad joke*";
-		this.currentUser = "default asshole";
+		this.joke = "What do you call a fish with no eyes? \n A fsh!";
+		this.currentUser = "look at *this* asshole";
 		this.content = new String("quality content");
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList<String>();
@@ -47,26 +50,40 @@ public class Chatbot
 		responseList.add("");
 		responseList.add("");
 
-		spookyList.add("Halloween is the best holliday.");
-		spookyList.add("BOO!!! Hahahaha, gotcha!");
-		spookyList.add("Spooky scary skeletons...");
-		spookyList.add("UwU");
-		spookyList.add("Here's JOHNNY!");
-		spookyList.add("Bush did 9/11.");
-		spookyList.add("3 spoopy 5 me");
-		spookyList.add("11/10, would spoop again");
-		spookyList.add("You're Mom gay");
+		spookyList.add("Halloween");
+		spookyList.add("Boo");
+		spookyList.add("Spooky");
+		spookyList.add("Skeletons");
+		spookyList.add("Scary");
+		spookyList.add("Dark");
+		spookyList.add("Spoopy");
+		spookyList.add("Moon");
+		spookyList.add(" ");
 	}
 
 	public String processText(String userText)
 	{
 		String output = "";
+		if(!legitimacyChecker(userText))
+		{
+			return "Sorry, that's not an appropriate value. Please enter something besides \"null\".";
+		}
 		if (contentChecker(userText))
 		{
 			output += "You said the special words! ";
 		}
 		output += "You said: " + userText;
-		output += "\n Chatbot says: ";
+		output += "\n Chatbot says: " + responseList.get(rand.nextInt(responseList.size()));
+		int randomNumber = rand.nextInt(100);
+		if (randomNumber == 50)
+		{
+			this.currentUser = askName();
+		}
+		else if (randomNumber == 75)
+		{
+			output += "\n" + joke;
+		}
+		output += "\n By the way, type \"quit\" to exit.";
 		return output;
 	}
 
@@ -83,11 +100,11 @@ public class Chatbot
 			{
 				hasContent = true;
 			}
-			else if(inputContent.indexOf(" " + content) == inputContent.length() - 1)
+			else if (inputContent.indexOf(" " + content) == inputContent.length() - content.length() - 1)
 			{
 				hasContent = true;
 			}
-			else if(inputContent.contains(" " + content + " "))
+			else if (inputContent.contains(" " + content + " "))
 			{
 				hasContent = true;
 			}
@@ -102,13 +119,10 @@ public class Chatbot
 	public boolean spookyChecker(String inputContent)
 	{
 		boolean isSpooky = false;
-		if (inputContent.contains("Halloween"))
-		{
-			isSpooky = true;
-		}
 		for (String phrase : spookyList)
 		{
-			if(inputContent.contains(phrase)) {
+			if (inputContent.toLowerCase().contains(phrase.toLowerCase()))
+			{
 				isSpooky = true;
 			}
 		}
@@ -136,6 +150,7 @@ public class Chatbot
 	public String askName()
 	{
 		String name = "";
+		name = JOptionPane.showInputDialog(null, "What is your name, again?");
 		return name;
 	}
 
