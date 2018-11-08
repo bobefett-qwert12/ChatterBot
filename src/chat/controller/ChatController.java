@@ -30,7 +30,7 @@ public class ChatController
 	public String interactWithChatbot(String userInput)
 	{
 		String chatBotSays = myBot.processText(userInput);
-		if (userInput.toLowerCase().contains("quit"))
+		if (chatBotSays.toLowerCase().indexOf("quit") == 10)
 		{
 			return "quit";
 		}
