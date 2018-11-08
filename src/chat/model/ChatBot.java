@@ -1,7 +1,6 @@
 package chat.model;
 
 import java.util.ArrayList;
-import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Chatbot
@@ -11,7 +10,6 @@ public class Chatbot
 	private String joke;
 	private String content;
 	private ArrayList<String> spookyList;
-	private Random rand = new Random();
 
 	public Chatbot()
 	{
@@ -64,6 +62,7 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String output = "";
+		int randomIndex = (int)(Math.random() * responseList.size());
 		if(!legitimacyChecker(userText))
 		{
 			return "Sorry, that's not an appropriate value. Please enter something besides \"null\".";
@@ -73,8 +72,8 @@ public class Chatbot
 			output += "You said the special words! ";
 		}
 		output += "You said: " + userText;
-		output += "\n Chatbot says: " + responseList.get(rand.nextInt(responseList.size()));
-		int randomNumber = rand.nextInt(100);
+		output += "\n Chatbot says: " + responseList.get(randomIndex);
+		int randomNumber = (int)(Math.random() * 100);
 		if (randomNumber == 50)
 		{
 			this.currentUser = askName();
@@ -83,7 +82,7 @@ public class Chatbot
 		{
 			output += "\n" + joke;
 		}
-		output += "\n By the way, type \"quit\" to exit.";
+		output += "\n Chatbot also says: By the way, type \"quit\" to exit.";
 		return output;
 	}
 
