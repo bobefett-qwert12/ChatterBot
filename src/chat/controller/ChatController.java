@@ -7,12 +7,12 @@ import chat.view.ChatFrame;
 public class ChatController
 {
 	private Chatbot myBot;
-	private ChatFrame frame;
+	private ChatFrame appFrame;
 
-	public ChatController(ChatFrame frame)
+	public ChatController(ChatFrame appFrame)
 	{
 		myBot = new Chatbot();
-		this.frame = frame;
+		this.appFrame = appFrame;
 	}
 
 	public void start()
@@ -54,5 +54,10 @@ public class ChatController
 	public void setChatbot(Chatbot myBot)
 	{
 		this.myBot = myBot;
+	}
+	
+	public ChatFrame getFrame()
+	{
+		return this.appFrame;
 	}
 }
