@@ -8,7 +8,10 @@ public class ChatPanel extends JPanel
 	private SpringLayout appLayout;
 	private ChatController appController;
 	private JButton chatButton;
-	private JTextField inputField;
+	private JButton checkerButton;
+	private JButton loadButton;
+	private JButton saveButton;
+	private JTextField chatField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
 	
@@ -16,15 +19,22 @@ public class ChatPanel extends JPanel
 	{
 		super();
 		this.appController = appController;
+		appLayout = new SpringLayout();
 		
-		chatButton = new JButton("Click me plz");
-		inputField = new JTextField("");
-		chatArea = new JTextArea("");
+		saveButton = new JButton("Save");
+		loadButton = new JButton("Load");
+		chatButton = new JButton("Chat");
+		checkerButton = new JButton("Check Text");
 		
+		chatField = new JTextField("Talk to the bot here", 50);
+		chatArea = new JTextArea("Chat Area", 20, 50);
+		
+		chatPane = new JScrollPane();
+		
+		setupScrollPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
-		setupScrollPane();
 	}
 	
 	private void setupPanel()
