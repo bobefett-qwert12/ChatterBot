@@ -15,32 +15,34 @@ public class ChatPanel extends JPanel
 	private JButton checkerButton;
 	private JButton loadButton;
 	private JButton saveButton;
+	private JButton clearButton;
 	private JTextField chatField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
-	
+
 	public ChatPanel(ChatController appController)
 	{
 		super();
 		this.appController = appController;
 		appLayout = new SpringLayout();
-		
+
 		saveButton = new JButton("Save");
 		loadButton = new JButton("Load");
 		chatButton = new JButton("Chat");
 		checkerButton = new JButton("Check Text");
-		
+		clearButton = new JButton("Clear Text");
+
 		chatField = new JTextField("Talk to the bot here", 50);
 		chatArea = new JTextArea("Chat Area", 20, 50);
-		
+
 		chatPane = new JScrollPane();
-		
+
 		setupScrollPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
 	}
-	
+
 	private void setupPanel()
 	{
 		this.setLayout(appLayout);
@@ -53,12 +55,12 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(chatField);
 	}
-	
+
 	private void setupLayout()
 	{
-		
+
 	}
-	
+
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -73,14 +75,24 @@ public class ChatPanel extends JPanel
 				chatField.setText("");
 			}
 		});
+
+		clearButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				
+				chatArea.setCaretPosition(chatArea.getDocument().getLength());
+				chatField.setText("");
+			}
+		});
 	}
-	
+
 	private void setupScrollPane()
 	{
 		chatArea.setEditable(false);
 		chatArea.setLineWrap(true);
 		chatArea.setWrapStyleWord(true);
-		
+
 		chatPane.setViewportView(chatArea);
 		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
