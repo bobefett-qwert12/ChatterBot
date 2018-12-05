@@ -1,6 +1,7 @@
 package chat.view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
@@ -64,7 +65,12 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				String userText = chatField.getText();
+				String response = "";
+				response = appController.interactWithChatbot(userText);
+				chatArea.append(response);
+				chatArea.setCaretPosition(chatArea.getDocument().getLength());
+				chatField.setText("");
 			}
 		});
 	}

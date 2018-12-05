@@ -65,11 +65,11 @@ public class Chatbot
 		int randomIndex = (int)(Math.random() * responseList.size());
 		if(!legitimacyChecker(userText))
 		{
-			return "Sorry, that's not an appropriate value. Please enter something besides \"null\".";
+			return "Sorry, that's not an appropriate value. Please enter something besides \"null\", random typing, and longer than 3 letters.\n";
 		}
 		if (contentChecker(userText))
 		{
-			output += "You said the special words! ";
+			output += "You said the special words! \n";
 		}
 		output += "You said: " + userText;
 		output += "\n Chatbot says: " + responseList.get(randomIndex);
@@ -82,7 +82,7 @@ public class Chatbot
 		{
 			output += "\n" + joke;
 		}
-		output += "\n Chatbot also says: By the way, type \"quit\" to exit.";
+		output += "\n Chatbot also says: By the way, type \"quit\" to exit.\n";
 		return output;
 	}
 
@@ -135,7 +135,7 @@ public class Chatbot
 		{
 			isLegit = false;
 		}
-		else if (input.length() < 2)
+		else if (input.length() < 3)
 		{
 			isLegit = false;
 		}
@@ -149,7 +149,7 @@ public class Chatbot
 	public String askName()
 	{
 		String name = "";
-		name = JOptionPane.showInputDialog(null, "What is your name, again?");
+		name = JOptionPane.showInputDialog(null, "What is your name, again?\n");
 		return name;
 	}
 
