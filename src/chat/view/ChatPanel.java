@@ -1,7 +1,8 @@
 package chat.view;
 
 import java.awt.Color;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 import chat.controller.ChatController;
 
@@ -59,7 +60,13 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				
+			}
+		});
 	}
 	
 	private void setupScrollPane()

@@ -9,25 +9,25 @@ public class ChatController
 	private Chatbot myBot;
 	private ChatFrame appFrame;
 
-	public ChatController(ChatFrame appFrame)
+	public ChatController()
 	{
 		myBot = new Chatbot();
-		this.appFrame = appFrame;
+		appFrame = new ChatFrame(this);
 	}
 
 	public void start()
 	{
-		boolean isDone = false;
-		while (!isDone)
-		{
-			String userInput = JOptionPane.showInputDialog(null, "Welcome to my world! My name is chatBot! What do you want to talk about?");
-			String userInput2 = userInput;
-			while (!userInput2.equals("quit"))
-			{
-				userInput2 = JOptionPane.showInputDialog(null, interactWithChatbot(userInput2));
-			}
-			isDone = true;
-		}
+//		boolean isDone = false;
+//		while (!isDone)
+//		{
+//			String userInput = JOptionPane.showInputDialog(null, "Welcome to my world! My name is chatBot! What do you want to talk about?");
+//			String userInput2 = userInput;
+//			while (!userInput2.equals("quit"))
+//			{
+//				userInput2 = JOptionPane.showInputDialog(null, interactWithChatbot(userInput2));
+//			}
+//			isDone = true;
+//		}
 	}
 
 	public String interactWithChatbot(String userInput)
