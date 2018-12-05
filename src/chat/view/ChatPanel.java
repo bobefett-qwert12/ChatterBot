@@ -1,5 +1,7 @@
 package chat.view;
 
+import java.awt.Color;
+
 import javax.swing.*;
 import chat.controller.ChatController;
 
@@ -39,7 +41,15 @@ public class ChatPanel extends JPanel
 	
 	private void setupPanel()
 	{
-		
+		this.setLayout(appLayout);
+		this.setPreferredSize(new Dimension(800, 600));
+		this.setBackground(Color.cyan);
+		this.add(chatPane);
+		this.add(chatButton);
+		this.add(saveButton);
+		this.add(loadButton);
+		this.add(checkerButton);
+		this.add(chatField);
 	}
 	
 	private void setupLayout()
@@ -54,6 +64,12 @@ public class ChatPanel extends JPanel
 	
 	private void setupScrollPane()
 	{
+		chatArea.setEditable(false);
+		chatArea.setLineWrap(true);
+		chatArea.setWrapStyleWord(true);
 		
+		chatPane.setViewportView(chatArea);
+		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 }
