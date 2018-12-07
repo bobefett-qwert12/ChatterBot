@@ -53,6 +53,7 @@ public class ChatPanel extends JPanel
 		this.add(saveButton);
 		this.add(loadButton);
 		this.add(checkerButton);
+		this.add(clearButton);
 		this.add(chatField);
 	}
 
@@ -83,6 +84,30 @@ public class ChatPanel extends JPanel
 				
 				chatArea.setCaretPosition(chatArea.getDocument().getLength());
 				chatField.setText("");
+			}
+		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				
+			}
+		});
+		
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				
+			}
+		});
+		
+		checkerButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				
 			}
 		});
 	}
