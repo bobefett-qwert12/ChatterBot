@@ -16,6 +16,7 @@ public class IOController
 			String fileName = path;
 			Calendar date = Calendar.getInstance();
 			fileName += "/" + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH);
+			fileName += " at " +date.get(Calendar.HOUR) + "-" + date.get(Calendar.MINUTE);
 			fileName += " chatbot save.txt";
 			
 			//creates a scanner and a print writer from that file
