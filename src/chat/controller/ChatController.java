@@ -32,7 +32,7 @@ public class ChatController
 	
 	public void handleErrors(Exception e)
 	{
-		
+		JOptionPane.showMessageDialog(appFrame, e.getMessage());
 	}
 
 	public String interactWithChatbot(String userInput)

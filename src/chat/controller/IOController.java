@@ -12,15 +12,18 @@ public class IOController
 	{
 		try
 		{
+			//creates a new file name with the current date
 			String fileName = path;
 			Calendar date = Calendar.getInstance();
 			fileName += "/" + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH);
 			fileName += " chatbot save.txt";
 			
+			//creates a scanner and a print writer from that file
 			File saveFile = new File(fileName);
 			Scanner in = new Scanner(textToSave);
 			PrintWriter saveText = new PrintWriter(saveFile);
 			
+			//reads the file with the scanner and writes it to the print writer
 			while(in.hasNext())
 			{
 				String currentLine = in.nextLine();
@@ -32,11 +35,18 @@ public class IOController
 		}
 		catch(IOException e)
 		{
+			//catches file errors
 			app.handleErrors(e);
 		}
 		catch(Exception genericError)
 		{
+			//catches generic errors
 			app.handleErrors(genericError);
 		}
+	}
+	
+	private void close()
+	{
+		System.exit(0);
 	}
 }

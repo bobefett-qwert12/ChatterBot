@@ -1,0 +1,6 @@
+Chat AreaYou said: what's up?
+ Chatbot says: Shut up, I'm going to leave now!
+ Chatbot also says: By the way, type "quit" to exit.
+You said: wow, rude!
+ Chatbot says: 
+ Chatbot also says: By the way, type "quit" to exit.
