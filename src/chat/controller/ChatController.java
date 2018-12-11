@@ -29,6 +29,11 @@ public class ChatController
 //			isDone = true;
 //		}
 	}
+	
+	public void handleErrors(Exception e)
+	{
+		
+	}
 
 	public String interactWithChatbot(String userInput)
 	{
