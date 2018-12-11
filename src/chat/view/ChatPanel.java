@@ -107,7 +107,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				chatField.setText("");
+				chatArea.setText("");
 			}
 		});
 		

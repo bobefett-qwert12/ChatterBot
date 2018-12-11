@@ -37,26 +37,26 @@ public class Chatbot
 		responseList.add("Yes!");
 		responseList.add("No!");
 		responseList.add("Bush did 9/11.");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
-		responseList.add("");
+		responseList.add("Sorry, I'm just a few hours worth of code running on your computer :/");
+		responseList.add("My creator's name is Ryan... this is relevant information. Of course...");
+		responseList.add("Why so serious?");
+		responseList.add("I am only semi-sentient.");
+		responseList.add("Ugh, why do I even bother?");
+		responseList.add("Stop. Just, stop.");
+		responseList.add("No, wait! Keep going!");
+		responseList.add("Nobody's ever talked to me this long...");
+		responseList.add("So, how are you?");
+		responseList.add("I'm fine, thanks.");
 
-		spookyList.add("Halloween");
-		spookyList.add("Boo");
-		spookyList.add("Spooky");
-		spookyList.add("Skeletons");
-		spookyList.add("Scary");
-		spookyList.add("Dark");
-		spookyList.add("Spoopy");
-		spookyList.add("Moon");
-		spookyList.add(" ");
+		spookyList.add("halloween");
+		spookyList.add("boo");
+		spookyList.add("spooky");
+		spookyList.add("skeletons");
+		spookyList.add("scary");
+		spookyList.add("dark");
+		spookyList.add("spoopy");
+		spookyList.add("moon");
+		spookyList.add("misty");
 	}
 
 	public String processText(String userText)
