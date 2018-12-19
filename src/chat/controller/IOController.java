@@ -72,9 +72,4 @@ public class IOController
 		}
 		return contents;
 	}
-	
-	private void close()
-	{
-		System.exit(0);
-	}
 }

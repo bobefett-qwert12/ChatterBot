@@ -34,6 +34,11 @@ public class ChatController
 	{
 		JOptionPane.showMessageDialog(appFrame, e.getMessage());
 	}
+	
+	private void close()
+	{
+		System.exit(0);
+	}
 
 	public String interactWithChatbot(String userInput)
 	{
