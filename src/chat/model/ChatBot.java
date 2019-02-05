@@ -82,7 +82,7 @@ public class Chatbot
 		{
 			output += "\n" + joke;
 		}
-		output += "\n Chatbot also says: By the way, type \"quit\" to exit.\n";
+		output += "\n Chatbot also says: By the way, press the quit button to exit.\n";
 		return output;
 	}
 

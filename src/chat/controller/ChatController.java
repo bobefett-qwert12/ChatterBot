@@ -35,7 +35,7 @@ public class ChatController
 		JOptionPane.showMessageDialog(appFrame, e.getMessage());
 	}
 	
-	private void close()
+	public void close()
 	{
 		System.exit(0);
 	}
@@ -52,8 +52,14 @@ public class ChatController
 
 	public String useChatbotCheckers(String text)
 	{
-		String blah = "Halloween";
-		return blah;
+		if(myBot.contentChecker(text))
+		{
+			return "This input is legitimate.";
+		}
+		else
+		{
+			return "This input is illegitimate, please try again.";
+		}
 	}
 
 	public Chatbot getChatbot()

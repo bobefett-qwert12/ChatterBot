@@ -17,6 +17,7 @@ public class ChatPanel extends JPanel
 	private JButton loadButton;
 	private JButton saveButton;
 	private JButton clearButton;
+	private JButton quitButton;
 	private JTextField chatField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
@@ -32,6 +33,7 @@ public class ChatPanel extends JPanel
 		chatButton = new JButton("Chat");
 		checkerButton = new JButton("Check Text");
 		clearButton = new JButton("Clear Text");
+		quitButton = new JButton("Quit");
 
 		chatField = new JTextField("Talk to the bot here", 50);
 		chatArea = new JTextArea("Chat Area", 20, 50);
@@ -55,6 +57,7 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(clearButton);
 		this.add(chatField);
+		this.add(quitButton);
 	}
 
 	private String getPath(String choice)
@@ -161,7 +164,15 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
-				
+				chatArea.setText(appController.useChatbotCheckers(chatField.getText()));
+			}
+		});
+		
+		quitButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				appController.close();
 			}
 		});
 	}
